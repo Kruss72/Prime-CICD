@@ -1,0 +1,11 @@
+1. EC2PrimeDeployRole is an IAM role assigned to EC2 instances that allows them to interact 
+with AWS services as part of the deployment process. It needs S3 permissions because 
+AWS CodeDeploy tyically stores application artifacts in an S3 bucket, ergo the EC2 instance 
+must retrieve these artifacts from S3 to deploy and execute the application properly.
+
+2. It defines how CodeDeploy is suppposed to manage the deployment lifecycle.
+It includes hooks that specify scripts or commands to run at different stages of the
+deployment process. 
+
+3. If it were in a private subnet, it would either need a NAT Gateway/NAT Instance or
+VPC Endpoints for S3 and CodeDeploy
